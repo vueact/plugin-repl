@@ -1,0 +1,25 @@
+{
+  "name": "plugin-repl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "poi build",
+    "dev": "poi"
+  },
+  "devDependencies": {
+    "offline-plugin": "^4.8.3",
+    "poi": "^9.1.7",
+    "poi-preset-offline": "^9.0.1",
+    "postcss-nested": "^2.1.0"
+  },
+  "dependencies": {
+    "babel-plugin-syntax-class-properties": "^6.13.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-react-to-vue": "vueact/babel-plugin-transform-react-to-vue",
+    "babel-standalone": "^6.25.0",
+    "cm-highlight": "^0.1.1",
+    "codemirror": "^5.28.0"
+  }
+}
