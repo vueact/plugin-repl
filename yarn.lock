@@ -624,7 +624,7 @@ babel-plugin-transform-object-rest-spread@^6.23.0:
 
 babel-plugin-transform-react-to-vue@vueact/babel-plugin-transform-react-to-vue:
   version "0.2.0"
-  resolved "https://codeload.github.com/vueact/babel-plugin-transform-react-to-vue/tar.gz/68cd8b8eed40c21f39f53d424e3a47d08016552f"
+  resolved "https://codeload.github.com/vueact/babel-plugin-transform-react-to-vue/tar.gz/801893fb34650cd91db7cd3fb9be8fe86c689850"
 
 babel-plugin-transform-regenerator@^6.22.0:
   version "6.24.1"
