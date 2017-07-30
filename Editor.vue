@@ -41,8 +41,8 @@
     name: 'JSXEditor',
     data() {
       const defaultValue = `
-import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
+import { render } from 'react-dom'
 
 class App extends Component {
   constructor(props) {
@@ -69,7 +69,7 @@ class App extends Component {
   componentDidMount = () => console.log(this.state)
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+render(<App />, document.getElementById('root'))
 `.trim()
       const { input } = qs.parse(location.hash.substring(2))
 
