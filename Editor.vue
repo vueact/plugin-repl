@@ -34,6 +34,8 @@
   import 'codemirror/mode/javascript/javascript'
   import 'codemirror/mode/jsx/jsx'
   import 'codemirror/addon/selection/active-line'
+  import 'codemirror/addon/fold/xml-fold'
+  import 'codemirror/addon/edit/matchtags'
 
   export default {
     name: 'JSXEditor',
@@ -84,6 +86,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
         indentWithTabs: false,
         theme: 'oceanic',
         styleActiveLine: true,
+        matchTags: { bothTags: true },
         extraKeys: {
           Tab: cm => {
             cm.replaceSelection(' '.repeat(cm.getOption('tabSize')))
@@ -139,6 +142,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 </script>
 
 <style src="codemirror/lib/codemirror.css"></style>
+<style src="./codemirror.css"></style>
 <style src="./codemirror-oceanic.css"></style>
 <style>
   :root {
@@ -231,6 +235,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
     overflow: auto;
     line-height: 1.45;
     code {
+      font-family: inconsolata, monospace;
       padding: 0;
       margin: 0;
       font-size: 100%;
