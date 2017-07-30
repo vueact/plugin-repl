@@ -37,8 +37,9 @@ import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 
 class App extends Component {
-  state = {
-    hello: 'world'
+  constructor(props) {
+    super(props)
+    this.state = { hello: 'world' }
   }
   myMethod = () => {
     this.setState({ hello: 'not world ;)' })
