@@ -18,7 +18,7 @@
     "babel-plugin-syntax-class-properties": "^6.13.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
-    "babel-plugin-transform-react-to-vue": "vueact/babel-plugin-transform-react-to-vue#aabfba65b5364f3c6989c823839ddd9c58666f45",
+    "babel-plugin-transform-react-to-vue": "vueact/babel-plugin-transform-react-to-vue#9d0e676dab77a4bfbc3bcb2e11facafedfd09187",
     "babel-standalone": "next",
     "cm-highlight": "^0.1.1",
     "codemirror": "^5.28.0"
