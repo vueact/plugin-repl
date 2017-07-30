@@ -98,6 +98,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
     methods: {
       async transform() {
         const code = this.code
+        this.updateURL({ input: code })
         try {
           const [babel, preset] = await Promise.all([
             import('babel-standalone'),
@@ -113,10 +114,9 @@ ReactDOM.render(<App />, document.getElementById('root'))
             mode: 'jsx'
           })
 
-          this.updateURL({ input: code })
           this.error = null
         } catch (err) {
-          this.error = err.message
+          this.error = err.stack
         }
       },
       updateURL({ input }) {

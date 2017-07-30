@@ -622,7 +622,7 @@ babel-plugin-transform-object-rest-spread@^6.23.0:
     babel-plugin-syntax-object-rest-spread "^6.8.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-react-to-vue@vueact/babel-plugin-transform-react-to-vue, babel-plugin-transform-react-to-vue@vueact/babel-plugin-transform-react-to-vue#aabfba65b5364f3c6989c823839ddd9c58666f45:
+babel-plugin-transform-react-to-vue@vueact/babel-plugin-transform-react-to-vue#aabfba65b5364f3c6989c823839ddd9c58666f45:
   version "0.2.0"
   resolved "https://codeload.github.com/vueact/babel-plugin-transform-react-to-vue/tar.gz/aabfba65b5364f3c6989c823839ddd9c58666f45"
 
@@ -724,9 +724,9 @@ babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-standalone@^6.25.0:
-  version "6.25.0"
-  resolved "https://registry.yarnpkg.com/babel-standalone/-/babel-standalone-6.25.0.tgz#759ef04574402b6d1a1b5efa62d18c9a47e4abeb"
+babel-standalone@next:
+  version "7.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/babel-standalone/-/babel-standalone-7.0.0-alpha.15.tgz#47bdfcb9552cc353e5f4e38decd8177e5619df58"
 
 babel-template@^6.24.1, babel-template@^6.25.0:
   version "6.25.0"
