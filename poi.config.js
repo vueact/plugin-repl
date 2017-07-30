@@ -11,7 +11,11 @@ module.exports = options => ({
       .include.add(/babel-plugin/)
   },
   presets: [
-    require('poi-preset-offline')()
+    require('poi-preset-offline')({
+      pluginOptions: {
+        autoUpdate: true
+      }
+    })
   ],
   postcss: [
     require('postcss-nested')()
