@@ -2,9 +2,14 @@
   <div id="app">
     <header class="header">
       <div class="container">
+        <div class="header-logo" style="background-image: url(https://github.com/vueact.png)">
+        </div>
         <div class="header-left">
-          <h1><a href="https://github.com/vueact/babel-plugin-transform-react-to-vue">babel-plugin-transform-react-to-vue</a> REPL</h1>
-          <h2>Built using <a href="https://github.com/egoist/poi">Poi</a> with almost zero-config, <a target="_blank" href="https://github.com/vueact/plugin-repl">check out source code</a></h2>
+
+          <h1>
+
+          <a href="https://github.com/vueact/babel-plugin-transform-react-to-vue">babel-plugin-transform-react-to-vue</a> REPL</h1>
+          <h2>Built using <a href="https://github.com/egoist/poi">Poi</a> with almost zero-config, <a target="_blank" href="https://github.com/vueact/plugin-repl">check out repl source code</a></h2>
         </div>
 
       </div>
@@ -13,7 +18,7 @@
       <div class="container">
         <textarea ref="input" class="input">{{ code }}</textarea>
         <div class="result">
-          <pre class="code cm-s-default"><code v-html="result"></code></pre>
+          <pre class="code cm-s-oceanic"><code v-html="result"></code></pre>
           <div class="error" v-show="error">{{ error }}</div>
         </div>
       </div>
@@ -28,6 +33,7 @@
 
   import 'codemirror/mode/javascript/javascript'
   import 'codemirror/mode/jsx/jsx'
+  import 'codemirror/addon/selection/active-line'
 
   export default {
     name: 'JSXEditor',
@@ -76,6 +82,8 @@ ReactDOM.render(<App />, document.getElementById('root'))
         mode: 'jsx',
         tabSize: 2,
         indentWithTabs: false,
+        theme: 'oceanic',
+        styleActiveLine: true,
         extraKeys: {
           Tab: cm => {
             cm.replaceSelection(' '.repeat(cm.getOption('tabSize')))
@@ -131,16 +139,29 @@ ReactDOM.render(<App />, document.getElementById('root'))
 </script>
 
 <style src="codemirror/lib/codemirror.css"></style>
+<style src="./codemirror-oceanic.css"></style>
 <style>
+  :root {
+    --dark: #1C2022;
+    --light: rgba(255,255,255,0.7);
+  }
   html, body, #app, .CodeMirror {
     height: 100%;
   }
   body {
     margin: 0;
+    background-color: var(--dark);
     font: 14px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Helvetica Neue,sans-serif;
   }
   * {
     box-sizing: border-box;
+  }
+  a {
+    color: var(--light);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .container {
     max-width: 1080px;
@@ -149,27 +170,28 @@ ReactDOM.render(<App />, document.getElementById('root'))
   }
   .header {
     height: 80px;
-    background-color: #4fc08d;
-    color: white;
+    background-color: var(--dark);
+    color: var(--light);
     >.container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
     }
     h1 {
       margin: 0;
       font-weight: 400;
-      a {
-        color: white;
-      }
     }
     h2 {
       margin: 0;
       font-weight: 400;
       font-size: 14px;
-      a {
-        color: white;
-      }
+    }
+    .header-logo {
+      width: 60px;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 10px;
     }
     .header-right {
       display: flex;
@@ -177,18 +199,17 @@ ReactDOM.render(<App />, document.getElementById('root'))
     }
   }
   .editors {
-    background-color: #f9f9f9;
     height: calc(100% - 80px);
     >.container {
       display: flex;
       align-items: center;
       justify-content: center;
+      border: 1px solid rgb(18, 21, 22);
+      border-radius: 3px 3px 0 0;
+      overflow: hidden;
     }
     .CodeMirror, .result {
       width: 50%;
-      padding: 10px;
-      padding-right: 0;
-      border-left: 1px solid #e2e2e2;
     }
   }
   .input {
@@ -200,10 +221,10 @@ ReactDOM.render(<App />, document.getElementById('root'))
   .result {
     position: relative;
     height: 100%;
-    border-right: 1px solid #e2e2e2;
-    background-color: white;
+    border-left: 1px solid #19161b;
   }
   .code {
+    padding: 4px;
     margin: 0;
     height: 100%;
     word-wrap: normal;

@@ -18,6 +18,7 @@ module.exports = options => ({
     })
   ],
   postcss: [
-    require('postcss-nested')()
+    require('postcss-nested')(),
+    require('postcss-custom-properties')()
   ]
 })
