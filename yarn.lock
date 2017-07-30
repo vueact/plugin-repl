@@ -622,7 +622,7 @@ babel-plugin-transform-object-rest-spread@^6.23.0:
     babel-plugin-syntax-object-rest-spread "^6.8.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-react-to-vue@vueact/babel-plugin-transform-react-to-vue:
+babel-plugin-transform-react-to-vue@vueact/babel-plugin-transform-react-to-vue, babel-plugin-transform-react-to-vue@vueact/babel-plugin-transform-react-to-vue#aabfba65b5364f3c6989c823839ddd9c58666f45:
   version "0.2.0"
   resolved "https://codeload.github.com/vueact/babel-plugin-transform-react-to-vue/tar.gz/aabfba65b5364f3c6989c823839ddd9c58666f45"
 
