@@ -5,13 +5,11 @@
         <div class="header-logo" style="background-image: url(https://github.com/vueact.png)">
         </div>
         <div class="header-left">
-
           <h1>
-
-          <a href="https://github.com/vueact/babel-plugin-transform-react-to-vue">babel-plugin-transform-react-to-vue</a> REPL</h1>
+            <a href="https://github.com/vueact/babel-plugin-transform-react-to-vue">babel-plugin-transform-react-to-vue</a> REPL
+          </h1>
           <h2>Built using <a href="https://github.com/egoist/poi">Poi</a> with almost zero-config, <a target="_blank" href="https://github.com/vueact/plugin-repl">check out repl source code</a></h2>
         </div>
-
       </div>
     </header>
     <div class="editors">
