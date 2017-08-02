@@ -16,7 +16,12 @@
     </header>
     <div class="editors">
       <div class="container">
-        <textarea ref="input" class="input">{{ code }}</textarea>
+        <code-mirror
+          class="input"
+          :value="code"
+          :options="editorOptions"
+          @change="updateCode">
+        </code-mirror>
         <div class="result">
           <pre class="code cm-s-oceanic"><code v-html="result"></code></pre>
           <div class="error" v-show="error">{{ error }}</div>
@@ -28,7 +33,7 @@
 
 <script>
   import highlight from 'cm-highlight'
-  import CodeMirror from 'codemirror'
+  import CodeMirror from 'vue-cm'
   import qs from 'querystring'
 
   import 'codemirror/mode/javascript/javascript'
@@ -39,6 +44,11 @@
 
   export default {
     name: 'JSXEditor',
+
+    components: {
+      CodeMirror
+    },
+
     data() {
       const defaultValue = `
 import React, { Component } from 'react'
@@ -76,37 +86,38 @@ render(<App />, document.getElementById('root'))
       return {
         result: 'Loading...',
         error: '',
-        code: input || defaultValue
-      }
-    },
-    mounted() {
-      this.editor = CodeMirror.fromTextArea(this.$refs.input, {
-        mode: 'jsx',
-        tabSize: 2,
-        indentWithTabs: false,
-        theme: 'oceanic',
-        styleActiveLine: true,
-        matchTags: { bothTags: true },
-        extraKeys: {
-          Tab: cm => {
-            cm.replaceSelection(' '.repeat(cm.getOption('tabSize')))
+        code: input || defaultValue,
+        editorOptions: {
+          mode: 'jsx',
+          tabSize: 2,
+          indentWithTabs: false,
+          theme: 'oceanic',
+          styleActiveLine: true,
+          matchTags: { bothTags: true },
+          extraKeys: {
+            Tab: cm => {
+              cm.replaceSelection(' '.repeat(cm.getOption('tabSize')))
+            }
           }
         }
-      })
-      this.transform()
-      this.editor.on('change', e => {
-        this.code = e.getValue()
-      })
+      }
     },
+
+    mounted() {
+      this.transform()
+    },
+
     watch: {
       code() {
         this.transform()
-      },
-      mode() {
-        this.transform()
       }
     },
+
     methods: {
+      updateCode(newValue) {
+        this.code = newValue
+      },
+
       async transform() {
         const code = this.code
         this.updateURL({ input: code })
@@ -130,6 +141,7 @@ render(<App />, document.getElementById('root'))
           this.error = err.stack
         }
       },
+
       updateURL({ input }) {
         const query = qs.parse(location.hash.substring(2))
         if (input !== undefined) {

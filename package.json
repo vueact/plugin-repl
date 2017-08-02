@@ -21,6 +21,7 @@
     "babel-plugin-transform-react-to-vue": "vueact/babel-plugin-transform-react-to-vue#9d0e676dab77a4bfbc3bcb2e11facafedfd09187",
     "babel-standalone": "next",
     "cm-highlight": "^0.1.1",
-    "codemirror": "^5.28.0"
+    "codemirror": "^5.28.0",
+    "vue-cm": "^1.0.1"
   }
 }
